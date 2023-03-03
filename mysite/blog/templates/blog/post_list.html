@@ -7,18 +7,18 @@
 <div>
 	<h1><a href = "/">Блог гения мира сего</a><h1>
 </div>
-
 <div>
-	<p>published: 02.05.2008, 6:25</p>
-	<h2><a href="">Мой первый пост</a>
-	</h2>
-	<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+	<h1><a href="/">Django Startup</a></h1>
 </div>
 
-<div>
-	<p>published: 24.02.2023, 14:12</p>
-	<h2><a href="/">Мой второй пост</a></h2>
-	<p>Книга Ларошфуко предназначена в первую очередь для любителей притч, короткой и ясной мудрости, да копипаста, ибо тут столько можно почерпнуть, а именно 641 максиму, что ваш блог будет долгое время процветать. А если вы писатель, то смело можете найти эпиграфы для всех своих глав, т.к. тут мудрости всякой разной и на любой вкус. Мало что изменилось за 400 лет - все мысли правдивы, их можно смело произносить в обществе... и ты будешь всегда прав</p>
-</div>
+{% for post in posts %}
+	<div>
+		<p>published: {{ post.published_date }}</p>
+
+		<h1><a href="">{{ post.title }}</a></h1>
+
+		<p>{{ post.text|linebreaksbr }}</p>
+	</div>
+{% endfor %}
 </body>
 </html>
